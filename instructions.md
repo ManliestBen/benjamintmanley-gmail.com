@@ -119,6 +119,8 @@ touch .env
 ```
 REACT_APP_WEATHER_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
+# MAKE SURE YOU RESTART YOUR APP AFTER ADDING THE KEY!  If you don't, you won't have access to the key stored inside the process.env!
+
 # In order to send a request to the API, we need to write a function.  Above the render function in App.js, add an asynchronous function called getWeather:
 ```js
 getWeather = async (e) => {
@@ -137,6 +139,16 @@ getWeather = async (e) => {
 .
 <Titles />
 <Form loadWeather={this.getWeather} />
+.
+.
+.
+```
+# Next, update the form to execute the function when the button is pressed:
+```js
+.
+.
+.
+<form onSubmit={props.loadWeather}>
 .
 .
 .
